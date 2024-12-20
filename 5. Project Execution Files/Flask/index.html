@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Cellphone Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Amazon Cellphone Sentiment Analysis</h1>
+        <form action="#">
+            <label for="review">Type your Review here</label>
+            <textarea id="review" name="review" rows="4" cols="50" placeholder="Enter your review here..."></textarea>
+            <br>
+            <button type="button" onclick="predictSentiment()">Predict</button>
+        </form>
+        <div id="result">Negative Tweet</div>
+    </div>
+
+    <script>
+        function predictSentiment() {
+            // Simple simulation of prediction
+            const reviewText = document.getElementById('review').value;
+            const resultDiv = document.getElementById('result');
+            if (reviewText.toLowerCase().includes('waste') || reviewText.toLowerCase().includes('bad')) {
+                resultDiv.textContent = "Negative Tweet";
+            } else {
+                resultDiv.textContent = "Positive Tweet";
+            }
+        }
+    </script>
+</body>
+</html>
